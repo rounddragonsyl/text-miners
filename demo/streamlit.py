@@ -608,7 +608,7 @@ elif "Classification" in page:
     cm_path = os.path.join(OUTPUTS, "confusion_matrices.png")
     if os.path.exists(cm_path):
         section_label("Confusion Matrices")
-        st.image(cm_path, use_container_width=True)
+        st.image(cm_path, use_column_width=True)
 
     # ── Full results (only when CSV exists) ──
     if class_res is not None:
@@ -781,7 +781,7 @@ elif "Risk Queue" in page:
         section_label("Step 2 · Model Evaluation — LR Classifier on 20% Annotation Test Split")
         col_img, _ = st.columns([1, 1])
         with col_img:
-            st.image(cm_risk, use_container_width=True)
+            st.image(cm_risk, use_column_width=True)
 
     # ── Full predicted results (when CSV exists) ──
     if risk_res is not None and "predicted_risk" in risk_res.columns:
@@ -1114,7 +1114,7 @@ elif "Topic" in page:
     hm_path = os.path.join(OUTPUTS, "topic_category_heatmap.png")
     if os.path.exists(hm_path):
         section_label("Topic × Product Category Heatmap")
-        st.image(hm_path, use_container_width=True)
+        st.image(hm_path, use_column_width=True)
 
     # ── Topic keywords image ──
     kw_labeled_path = os.path.join(OUTPUTS, "topic_keywords_labeled.png")
@@ -1122,7 +1122,7 @@ elif "Topic" in page:
     kw_path = kw_labeled_path if os.path.exists(kw_labeled_path) else kw_default_path
     if os.path.exists(kw_path):
         section_label("Top Keywords per Topic")
-        st.image(kw_path, use_container_width=True)
+        st.image(kw_path, use_column_width=True)
 
     # ── Topic browser ──
     section_label("Browse Complaints by Topic")
